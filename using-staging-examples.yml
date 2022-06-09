@@ -23,8 +23,9 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: QADeploy
+  dependsOn: Build
   jobs:
-  - job: job1
+  - job: QADeploys
     steps:
     - script: echo Hello, world! don change oo
       displayName: 'Run a one-line script'
@@ -36,8 +37,9 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: DevDeploy
+  dependsOn: Build
   jobs:
-  - job: job1
+  - job: DevDeploys
     steps:
     - script: echo Hello, world! don change oo
       displayName: 'Run a one-line script'
@@ -49,8 +51,11 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: ProdDeploy
+  dependsOn: 
+  - QADeploy
+  - DevDeploy
   jobs:
-  - job: job1
+  - job: ProdDeploys
     steps:
     - script: echo Hello, world! don change oo
       displayName: 'Run a one-line script'
