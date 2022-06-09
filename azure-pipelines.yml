@@ -48,7 +48,7 @@ jobs:
 
 - job: job4
   dependsOn: 
-  - j0b2
+  - job2
   steps:
     - script: echo i am just trying it out
       displayName: 'Trying multiple jobs out'
