@@ -10,9 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
-- job: firstJob
+- job: job1
+  dependsOn: 
+  - job6
   steps:
-  - script: echo Hello, world!
+  - script: echo Hello, world! don change oo
     displayName: 'Run a one-line script'
 
   - script: |
@@ -22,7 +24,69 @@ jobs:
     displayName: 'Run a multi-line script'
 
 
-- job: SecondJob
+- job: job2
+  dependsOn: 
+  - job5
+  steps:
+    - script: echo i am just trying it out
+      displayName: 'Trying multiple jobs out'
+
+- job: job3
+  dependsOn: 
+  - trial
+  - error
+  steps:
+  - script: echo Hello, world! don change oo
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      echo Olorunfemi Ifeoluwa Emmanuel.
+    displayName: 'Run a multi-line script'
+
+
+- job: job4
+  dependsOn: 
+  - j0b2
+  steps:
+    - script: echo i am just trying it out
+      displayName: 'Trying multiple jobs out'
+
+- job: job5
+  dependsOn: 
+  - job3
+  steps:
+  - script: echo Hello, world! don change oo
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      echo Olorunfemi Ifeoluwa Emmanuel.
+    displayName: 'Run a multi-line script'
+
+
+- job: job6
+  dependsOn: 
+  - job4
+  steps:
+    - script: echo i am just trying it out
+      displayName: 'Trying multiple jobs out'
+
+- job: trial
+  steps:
+  - script: echo Hello, world! don change oo
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      echo Olorunfemi Ifeoluwa Emmanuel.
+    displayName: 'Run a multi-line script'
+
+
+- job: error
   steps:
     - script: echo i am just trying it out
       displayName: 'Trying multiple jobs out'
