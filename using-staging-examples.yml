@@ -21,42 +21,44 @@ stages:
         echo Add other tasks to build, test, and deploy your project.
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
+    - bash: echo ls -R $(System.DefaultWorkingDirectory)
+    - bash: echo ls -R $(Build.ArtifactStagingDirectory)
 
-- stage: QADeploy
-  jobs:
-  - job: job1
-    steps:
-    - script: echo Hello, world! don change oo
-      displayName: 'Run a one-line script'
+# - stage: QADeploy
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo Hello, world! don change oo
+#       displayName: 'Run a one-line script'
 
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-        echo Olorunfemi Ifeoluwa Emmanuel.
-      displayName: 'Run a multi-line script'
+#     - script: |
+#         echo Add other tasks to build, test, and deploy your project.
+#         echo See https://aka.ms/yaml
+#         echo Olorunfemi Ifeoluwa Emmanuel.
+#       displayName: 'Run a multi-line script'
 
-- stage: DevDeploy
-  jobs:
-  - job: job1
-    steps:
-    - script: echo Hello, world! don change oo
-      displayName: 'Run a one-line script'
+# - stage: DevDeploy
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo Hello, world! don change oo
+#       displayName: 'Run a one-line script'
 
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-        echo Olorunfemi Ifeoluwa Emmanuel.
-      displayName: 'Run a multi-line script'
+#     - script: |
+#         echo Add other tasks to build, test, and deploy your project.
+#         echo See https://aka.ms/yaml
+#         echo Olorunfemi Ifeoluwa Emmanuel.
+#       displayName: 'Run a multi-line script'
 
-- stage: ProdDeploy
-  jobs:
-  - job: job1
-    steps:
-    - script: echo Hello, world! don change oo
-      displayName: 'Run a one-line script'
+# - stage: ProdDeploy
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo Hello, world! don change oo
+#       displayName: 'Run a one-line script'
 
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-        echo Olorunfemi Ifeoluwa Emmanuel.
-      displayName: 'Run a multi-line script'
+#     - script: |
+#         echo Add other tasks to build, test, and deploy your project.
+#         echo See https://aka.ms/yaml
+#         echo Olorunfemi Ifeoluwa Emmanuel.
+#       displayName: 'Run a multi-line script'
