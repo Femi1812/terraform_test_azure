@@ -12,7 +12,7 @@ pool:
 stages:
 - stage: Build
   variables:
-  environment:  myVariable
+    environment:  myVariable
   jobs:
   - job: InitialBuild
     steps:
