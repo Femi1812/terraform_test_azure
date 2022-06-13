@@ -36,31 +36,26 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
-# - stage: QADeploy
-#   jobs:
-#   - job: job1
-#     steps:
-#     - script: echo Hello, world! don change oo
-#       displayName: 'Run a one-line script'
+- stage: QADeploy
+  jobs:
+  - deployment: QADeploy
+    environment:  QA
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo deploy QA
 
-#     - script: |
-#         echo Add other tasks to build, test, and deploy your project.
-#         echo See https://aka.ms/yaml
-#         echo Olorunfemi Ifeoluwa Emmanuel.
-#       displayName: 'Run a multi-line script'
 
-# - stage: DevDeploy
-#   jobs:
-#   - job: job1
-#     steps:
-#     - script: echo Hello, world! don change oo
-#       displayName: 'Run a one-line script'
-
-#     - script: |
-#         echo Add other tasks to build, test, and deploy your project.
-#         echo See https://aka.ms/yaml
-#         echo Olorunfemi Ifeoluwa Emmanuel.
-#       displayName: 'Run a multi-line script'
+- stage: DevDeploy
+  jobs:
+  - deployment: DevDeploy
+    environment: Dev
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo deploy to Dev
 
 # - stage: ProdDeploy
 #   jobs:
