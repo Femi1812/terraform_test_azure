@@ -37,6 +37,7 @@ stages:
         publishLocation: 'Container'
 
 - stage: QADeploy
+  dependsOn: Build
   jobs:
   - deployment: QADeploy
     environment:  QA
@@ -48,6 +49,7 @@ stages:
 
 
 - stage: DevDeploy
+  dependsOn: Build
   jobs:
   - deployment: DevDeploy
     environment: Dev
