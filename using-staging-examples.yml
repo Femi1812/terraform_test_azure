@@ -11,10 +11,16 @@ pool:
 
 stages:
 - stage: Build
+  variables:
+    environment:  myVariable
   jobs:
   - job: InitialBuild
     steps:
+<<<<<<< HEAD
     - script: echo Hello, world!w
+=======
+    - script: echo Hello, $(environment)
+>>>>>>> 5ae798a8190460e58b1f656d72095c857bac3e46
       displayName: 'Run a one-line script'
 
     - script: |
@@ -37,7 +43,9 @@ stages:
         publishLocation: 'Container'
 
 - stage: QADeploy
+  dependsOn: Build
   jobs:
+<<<<<<< HEAD
   - deployment: QADeploy
     environment:  QA
     strategy:
@@ -45,10 +53,18 @@ stages:
         deploy:
           steps:
           - script: echo deploy QA
+=======
+  - job: QADeploys
+    steps:
+    - script: echo Hello, world! don change oo
+      displayName: 'Run a one-line script'
+>>>>>>> 5ae798a8190460e58b1f656d72095c857bac3e46
 
 
 - stage: DevDeploy
+  dependsOn: Build
   jobs:
+<<<<<<< HEAD
   - deployment: DevDeploy
     environment: Dev
     strategy:
@@ -56,6 +72,12 @@ stages:
         deploy:
           steps:
           - script: echo deploy to Dev
+=======
+  - job: DevDeploys
+    steps:
+    - script: echo Hello, world! don change oo
+      displayName: 'Run a one-line script'
+>>>>>>> 5ae798a8190460e58b1f656d72095c857bac3e46
 
 # - stage: ProdDeploy
 #   jobs:
@@ -64,8 +86,26 @@ stages:
 #     - script: echo Hello, world! don change oo
 #       displayName: 'Run a one-line script'
 
+<<<<<<< HEAD
 #     - script: |
 #         echo Add other tasks to build, test, and deploy your project.
 #         echo See https://aka.ms/yaml
 #         echo Olorunfemi Ifeoluwa Emmanuel.
 #       displayName: 'Run a multi-line script'
+=======
+- stage: ProdDeploy
+  dependsOn: 
+  - QADeploy
+  - DevDeploy
+  jobs:
+  - job: ProdDeploys
+    steps:
+    - script: echo Hello, world! don change oo
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+        echo Olorunfemi Ifeoluwa Emmanuel.
+      displayName: 'Run a multi-line script'
+>>>>>>> 5ae798a8190460e58b1f656d72095c857bac3e46
