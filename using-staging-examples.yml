@@ -11,10 +11,16 @@ pool:
 
 stages:
 - stage: Build
+  variables:
+  environment:  myVariable
   jobs:
   - job: InitialBuild
     steps:
+<<<<<<< HEAD
     - script: echo Hello, world!w
+=======
+    - script: echo Hello, $(environment)
+>>>>>>> c330af6 (variablles)
       displayName: 'Run a one-line script'
 
     - script: |
