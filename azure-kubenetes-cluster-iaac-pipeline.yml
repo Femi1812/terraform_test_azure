@@ -12,6 +12,9 @@ steps:
   name: publicKey
   inputs:
     secureFile: 'azure_rsa.pub'
+
+
+
 - task: TerraformCLI@0
   inputs:
     command: 'init'
@@ -25,6 +28,8 @@ steps:
     backendAzureRmContainerName: 'storageacctfortecontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
     allowTelemetryCollection: true
+
+
 
 - task: TerraformCLI@0
   inputs:
