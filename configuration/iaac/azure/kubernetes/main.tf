@@ -25,7 +25,11 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
   default_node_pool {
     name            = "agentpool"
     node_count      = var.node_count
+<<<<<<< HEAD
     vm_size         = "Standard_GS5-8"
+=======
+    vm_size         = "standard_d16ads_v5"
+>>>>>>> ffa4b2f (terraform fix)
   }
 
   service_principal {
