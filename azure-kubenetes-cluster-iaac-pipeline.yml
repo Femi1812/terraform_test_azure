@@ -17,7 +17,7 @@ steps:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     backendType: 'azurerm'
-    backendServiceArm: 'Azure subscription 1(4ac23782-6a0f-45ec-8285-e03f5a805bad)'
+    backendServiceArm: 'azure-resource-manager-service-connection'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'westeurope'
@@ -30,6 +30,6 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'Azure subscription 1(4ac23782-6a0f-45ec-8285-e03f5a805bad)'
+    environmentServiceName: 'azure-resource-manager-service-connection'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publicKey.secureFilePath)'
     allowTelemetryCollection: true
