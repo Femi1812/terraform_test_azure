@@ -12,5 +12,5 @@ variable environment {
 }
 
 variable location {
-    default = "centralus"
+    default = "northeurope"
 }

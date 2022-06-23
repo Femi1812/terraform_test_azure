@@ -7,7 +7,7 @@ variable environment {
 }
 
 variable location {
-    default = "centralus"
+    default = "northeurope"
 }
 
 variable node_count {
