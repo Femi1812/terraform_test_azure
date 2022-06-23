@@ -20,17 +20,12 @@ output "cluster_password" {
 
 output "kube_config" {
   value = azurerm_kubernetes_cluster.terraform-k8s.kube_config_raw
-<<<<<<< HEAD
+
   sensitive = true
 }
  
 output "host" {
   value = azurerm_kubernetes_cluster.terraform-k8s.kube_config.0.host
 }
-=======
-}
 
-output "host" {
-  value = azurerm_kubernetes_cluster.terraform-k8s.kube_config.0.host
-}
->>>>>>> ffa4b2f (terraform fix)
+
