@@ -29,12 +29,7 @@ steps:
     backendAzureRmContainerName: 'storageacctfortecontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
 
-- task: TerraformCLI@0
-  inputs:
-    command: 'destroy'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'azure-resource-manager-service-connection'
-    allowTelemetryCollection: true
+
 
 - task: TerraformCLI@0
   inputs:
